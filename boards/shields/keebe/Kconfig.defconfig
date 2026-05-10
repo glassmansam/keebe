@@ -8,7 +8,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 # bluetooth stuff 
 
-config ZMK_SPLIT_CENTRAL_PERIPHERALS
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 1
 
 config BT_MAX_CONN
