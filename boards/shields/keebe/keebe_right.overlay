@@ -4,16 +4,48 @@
 
 #include "keebe.dtsi"
 
-&default_transform {
-    // Set this to the number of columns on the left side.
-    col-offset = <2>;
+// &default_transform {
+//    // Set this to the number of columns on the left side.
+//    col-offset = <2>;
+// };
+
+// &kscan {
+//    // Replace these comments with the GPIO pins in the matrix for the right side.
+//    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
+//    col-gpios
+//        = <&pro_micro 0 GPIO_ACTIVE_HIGH>
+//        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+//        ;
+// };
+
+/ {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&gpio1 6 GPIO_ACTIVE_HIGH>
+            , <&gpio1 4 GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 0 GPIO_ACTIVE_HIGH>
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
 };
 
-&kscan {
-    // Replace these comments with the GPIO pins in the matrix for the right side.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
-    col-gpios
-        = <&pro_micro 0 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
-        ;
+&matrix_transform0 {
+    col-offset = <6>;
+};
+
+&physical_layout_keebe {
+    kscan = <&kscan0>;
 };

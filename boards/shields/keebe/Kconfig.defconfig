@@ -6,6 +6,19 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+# bluetooth stuff 
+
+config ZMK_SPLIT_CENTRAL_PERIPHERALS
+    default 1
+
+config BT_MAX_CONN
+    default 6
+
+config BT_MAX_PAIRED
+    default 6
+
+# end bluetooth stuff 
+
 endif # SHIELD_KEEBE_LEFT
 
 if SHIELD_KEEBE_LEFT || SHIELD_KEEBE_RIGHT
