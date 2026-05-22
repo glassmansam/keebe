@@ -15,7 +15,7 @@ url: https://example.com
 features:
   - keys
   - studio  # Remove this line if your keyboard will not support ZMK Studio
-#  - underglow # TODO: add
+  - underglow # TODO: add
 
 requires:
   - pro_micro
