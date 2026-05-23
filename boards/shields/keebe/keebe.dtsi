@@ -58,7 +58,8 @@
 
         /* SPI */
         reg = <0>;
-        spi-max-frequency = <4000000>;
+        /* spi-max-frequency = <4000000>; */
+        spi-max-frequency = <3200000>;
 
         /* WS2812 */
         chain-length = <1>; /* Update this to the number of LEDs per half */
