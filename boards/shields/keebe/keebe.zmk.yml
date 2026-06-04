@@ -6,19 +6,14 @@ file_format: "1"
 id: keebe
 name: keebe
 type: shield
-
-# Set this to a URL that documents the keyboard.
-url: https://example.com
-
+requires: [pro_micro]
 # Add any features your keyboard supports here.
 # See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files#features
 features:
   - keys
   - studio  # Remove this line if your keyboard will not support ZMK Studio
-  - underglow # TODO: add
+  - underglow
 
-requires:
-  - pro_micro
 
 siblings:
   - keebe_left
